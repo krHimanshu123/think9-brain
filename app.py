@@ -16,6 +16,10 @@ st.markdown("""<style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root { --bg:#080b17; --surface:#11162a; --line:rgba(145,157,255,.16); --muted:#9da6c7; --accent:#8c7cff; --cyan:#55d8ff; }
 .stApp { background:radial-gradient(circle at 80% -10%,#25204e 0,transparent 34%),radial-gradient(circle at 0% 20%,#10253c 0,transparent 28%),var(--bg); color:#f2f4ff; font-family:'DM Sans',sans-serif; }
+[data-testid="stHeader"] { background:rgba(8,11,23,.96) !important; }
+[data-testid="stToolbar"] { background:transparent !important; }
+[data-testid="stSidebar"] * { color:#e7ebff; }
+[data-testid="stSidebar"] .meta,[data-testid="stSidebar"] .small-note { color:#9da6c7 !important; }
 [data-testid="stSidebar"] { background:rgba(8,11,23,.94); border-right:1px solid var(--line); }
 h1,h2,h3,h4 { font-family:'Space Grotesk',sans-serif !important; letter-spacing:-.03em; }
 .block-container { padding:2.5rem 4rem 4rem; max-width:1500px; }
@@ -27,6 +31,13 @@ h1,h2,h3,h4 { font-family:'Space Grotesk',sans-serif !important; letter-spacing:
 .metric-label,.meta { color:var(--muted); font-size:.78rem; }.metric-value { font-family:'Space Grotesk'; font-size:1.6rem; font-weight:700; margin-top:.4rem; }.section-head { display:flex;justify-content:space-between;align-items:end;margin:2.1rem 0 .9rem; }.section-head h2 { margin:0;font-size:1.35rem; }.badge { display:inline-block;padding:.28rem .58rem;border-radius:99px;color:#cdd5ff;background:rgba(140,124,255,.13);border:1px solid rgba(140,124,255,.25);font-size:.72rem; }.badge.green { color:#adf5d0;background:rgba(62,211,139,.1);border-color:rgba(62,211,139,.25); }
 .evidence { min-height:175px; }.evidence h4 { margin:.6rem 0;font-size:1.08rem; }.quote { color:#d9def3;line-height:1.55;font-size:.91rem; }.signal strong { display:block;margin:.55rem 0 .25rem; }.signal p { color:var(--muted);font-size:.8rem;margin:0; }.arch-step { text-align:center;padding:1.4rem;border-radius:18px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(22,29,57,.9),rgba(14,18,36,.9));margin:.7rem auto;max-width:850px; }.arch-step h3 { margin:.25rem 0;color:#fff; }.arch-step p { color:var(--muted);margin:0; }.arrow { text-align:center;color:var(--accent);font-size:1.4rem; }.small-note { color:#7e88aa;font-size:.74rem; }.prototype-label { color:#7e88aa;font-size:.72rem;letter-spacing:.04em;margin:.25rem 0 .65rem; }.reason-line { color:#cbd3ef;border-left:2px solid var(--cyan);padding:.45rem .8rem;margin-top:.8rem;font-size:.9rem; }.success-card { border:1px solid rgba(62,211,139,.35);background:rgba(35,102,76,.2);border-radius:16px;padding:1rem 1.2rem; }
 div[data-testid="stButton"] button { border-radius:10px;border:1px solid rgba(140,124,255,.35);background:rgba(140,124,255,.1);color:#eef0ff;transition:all .2s ease; } div[data-testid="stButton"] button:hover { border-color:var(--cyan);color:#fff;background:linear-gradient(135deg,rgba(67,106,220,.38),rgba(140,124,255,.32));box-shadow:0 0 18px rgba(85,216,255,.12); }
+/* Keep native Streamlit controls readable when the Cloud browser preference is Light. */
+textarea, input, [data-baseweb="select"] > div, [data-baseweb="input"] > div, [data-testid="stDateInput"] input { background:#11162a !important; color:#f2f4ff !important; border-color:rgba(145,157,255,.35) !important; -webkit-text-fill-color:#f2f4ff !important; }
+textarea::placeholder, input::placeholder { color:#8f99bd !important; -webkit-text-fill-color:#8f99bd !important; }
+[data-baseweb="select"] *, [data-baseweb="input"] * { color:#f2f4ff !important; }
+[role="listbox"], [role="option"] { background:#11162a !important; color:#f2f4ff !important; }
+[role="option"]:hover { background:#243b80 !important; }
+div[data-testid="stTextArea"] label, div[data-testid="stTextInput"] label, div[data-testid="stSelectbox"] label, div[data-testid="stFileUploader"] label { color:#cbd3ef !important; }
 /* Scoped selected query styling; overrides Streamlit primary/focus tokens and inner label text. */
 div[data-testid="stButton"] button:focus,div[data-testid="stButton"] button:active,div[data-testid="stButton"] button[aria-pressed="true"] { color:#f8faff !important;background:linear-gradient(135deg,#243B80,#443B83) !important;border:1px solid #6674F4 !important;box-shadow:0 0 18px rgba(102,116,244,.16) !important;outline:none !important; }
 div[data-testid="stButton"] button:focus:hover,div[data-testid="stButton"] button:active:hover,div[data-testid="stButton"] button[aria-pressed="true"]:hover { color:#fff !important;background:linear-gradient(135deg,#2d4b98,#514899) !important;border-color:#62D8FF !important; }
