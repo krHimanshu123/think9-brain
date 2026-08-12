@@ -18,7 +18,6 @@ st.markdown("""<style>
 .stApp { background:radial-gradient(circle at 80% -10%,#25204e 0,transparent 34%),radial-gradient(circle at 0% 20%,#10253c 0,transparent 28%),var(--bg); color:#f2f4ff; font-family:'DM Sans',sans-serif; }
 [data-testid="stHeader"] { background:rgba(8,11,23,.96) !important; }
 [data-testid="stToolbar"] { background:transparent !important; }
-[data-testid="stToolbar"] > div { visibility:hidden !important; }
 [data-testid="stSidebar"] * { color:#e7ebff; }
 [data-testid="stSidebar"] .meta,[data-testid="stSidebar"] .small-note { color:#9da6c7 !important; }
 [data-testid="stSidebar"] { background:rgba(8,11,23,.94); border-right:1px solid var(--line); }
