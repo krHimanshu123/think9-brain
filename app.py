@@ -18,6 +18,7 @@ st.markdown("""<style>
 .stApp { background:radial-gradient(circle at 80% -10%,#25204e 0,transparent 34%),radial-gradient(circle at 0% 20%,#10253c 0,transparent 28%),var(--bg); color:#f2f4ff; font-family:'DM Sans',sans-serif; }
 [data-testid="stHeader"] { background:rgba(8,11,23,.96) !important; }
 [data-testid="stToolbar"] { background:transparent !important; }
+[data-testid="stToolbar"] > div { visibility:hidden !important; }
 [data-testid="stSidebar"] * { color:#e7ebff; }
 [data-testid="stSidebar"] .meta,[data-testid="stSidebar"] .small-note { color:#9da6c7 !important; }
 [data-testid="stSidebar"] { background:rgba(8,11,23,.94); border-right:1px solid var(--line); }
@@ -38,6 +39,13 @@ textarea::placeholder, input::placeholder { color:#8f99bd !important; -webkit-te
 [role="listbox"], [role="option"] { background:#11162a !important; color:#f2f4ff !important; }
 [role="option"]:hover { background:#243b80 !important; }
 div[data-testid="stTextArea"] label, div[data-testid="stTextInput"] label, div[data-testid="stSelectbox"] label, div[data-testid="stFileUploader"] label { color:#cbd3ef !important; }
+/* Streamlit Cloud uploader: keep the complete dropzone dark in Light/System browser themes. */
+div[data-testid="stFileUploader"] section { background:#11162a !important; border:1px solid rgba(145,157,255,.35) !important; border-radius:12px !important; }
+div[data-testid="stFileUploader"] section > div { color:#cbd3ef !important; }
+div[data-testid="stFileUploader"] section small, div[data-testid="stFileUploader"] section span { color:#9da6c7 !important; }
+div[data-testid="stFileUploader"] button { background:#1b2650 !important; color:#f2f4ff !important; border:1px solid #6674f4 !important; }
+div[data-testid="stFileUploader"] button:hover { background:#243b80 !important; border-color:#62d8ff !important; }
+div[data-testid="stFileUploader"] svg { fill:#8fa2ff !important; color:#8fa2ff !important; }
 /* Scoped selected query styling; overrides Streamlit primary/focus tokens and inner label text. */
 div[data-testid="stButton"] button:focus,div[data-testid="stButton"] button:active,div[data-testid="stButton"] button[aria-pressed="true"] { color:#f8faff !important;background:linear-gradient(135deg,#243B80,#443B83) !important;border:1px solid #6674F4 !important;box-shadow:0 0 18px rgba(102,116,244,.16) !important;outline:none !important; }
 div[data-testid="stButton"] button:focus:hover,div[data-testid="stButton"] button:active:hover,div[data-testid="stButton"] button[aria-pressed="true"]:hover { color:#fff !important;background:linear-gradient(135deg,#2d4b98,#514899) !important;border-color:#62D8FF !important; }
